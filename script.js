@@ -122,7 +122,7 @@ document.getElementById('btn-confirm').addEventListener('click', () => {
 
     const interval = setInterval(() => {
         dots = (dots + 1) % 4;
-        text.textContent = "Conectando con jugador 2" + ".".repeat(dots);
+        text.textContent = "Conectando con jugador 1" + ".".repeat(dots);
     }, 500);
 
     // ⏳ redirección

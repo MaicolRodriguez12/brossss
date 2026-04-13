@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* 🔵 BODY */
+body {
+    background-color: #5C94FC;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* 🌄 CONTENEDOR DEL FONDO */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* ☁️ NUBES */
+.clouds {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    background: url('nube3.png') repeat-x;
+    background-size: auto 150px;
+    animation: moveClouds 40s linear infinite;
+    z-index: 1;
+    opacity: 0.85;
+    filter: blur(0.3px);
+}
+
+/* 🏔️ MONTAÑAS */
+.mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: url('montaña.png') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 2;
+}
+
+/* 🎮 CONTENIDO ENCIMA */
+#game-canvas {
+    position: relative;
+    z-index: 10;
+}
+
+/* ✨ TEXTO */
+.pixel-text {
+    text-shadow: 4px 4px #000;
+}
+
+/* 🎮 BLOQUE */
+.block-wrapper {
+    margin: 50px auto;
+    position: relative;
+    width: 100px;
+}
+
+.question-block {
+    width: 100px;
+    height: 100px;
+    background-color: #fbd000;
+    border: 5px solid #000;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -6px 6px 0px #b59700;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.question-block:hover {
+    transform: scale(1.05);
+}
+
+.question-block:active {
+    transform: scale(0.95);
+}
+
+/* 💥 ANIMACIÓN GOLPE */
+.bump {
+    animation: bump 0.15s ease;
+}
+
+@keyframes bump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-25px); }
+    60% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* 💰 MONEDA */
+@keyframes floatUp {
+    to {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+
+/* 🎁 ITEM */
+#item {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    top: 0;
+    animation: subir 0.6s ease forwards;
+    z-index: 15;
+}
+
+@keyframes subir {
+    from { top: 50px; opacity: 0; }
+    to { top: -40px; opacity: 1; }
+}
+
+/* 🎟️ TICKET */
+.ticket {
+    background: linear-gradient(135deg, #FFD700, #ffcc00);
+    color: #333;
+    padding: 20px;
+    border: 4px dashed #000;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 🔘 BOTÓN */
+#btn-confirm {
+    background: #E52521;
+    color: white;
+    padding: 15px;
+    border: 4px solid #000;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+#btn-confirm:hover {
+    transform: scale(1.1);
+    background: #ff3b37;
+}
+
+/* 🚫 OCULTO */
+.hidden {
+    display: none;
+}
+
+/* 🎞️ ANIMACIONES DE FONDO */
+@keyframes moveClouds {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes moveMountains {
+    from { background-position-x: 0; }
+    to { background-position-x: -200px; }
+}
+
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #ff4262;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 20; /* 🔥 por encima de todo */
+    text-align: center;
+}
+
+#btn-start {
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-family: 'Press Start 2P', cursive;
+    background: #E52521;
+    color: white;
+    border: 4px solid #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-start:hover {
+    transform: scale(1.1);
+    background: #ff3b37;
+}
+
+#mario-img {
+    width: 120px;
+    margin-top: 20px;
+    image-rendering: pixelated; /* 🔥 estilo retro */
+    animation: jump 1s infinite;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#mario-img:hover {
+    transform: scale(1.2);
+}

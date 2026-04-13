@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi jugadora 2? 🎮❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🌄 FONDO (SIEMPRE PRIMERO) -->
+    <div class="background">
+        <div class="clouds"></div>
+        <div class="mountains"></div>
+    </div>
+
+    <!-- 🎮 PANTALLA DE INICIO -->
+    <div id="start-screen">
+        <h1 class="pixel-text">🎮 NUEVA MISIÓN 🎮</h1>
+        <p>¿Quieres comenzar el juego? 👀</p>
+        <button id="btn-start">START</button>
+        <img src="mario.png" id="mario-img" alt="Mario">
+    </div>
+
+    <!-- 🎮 JUEGO -->
+    <div id="game-canvas">
+
+        <div id="setup">
+            <h1 class="pixel-text">¡UN BLOQUE SALVAJE APARECIÓ!</h1>
+            <p>Hola Lau 👀 tienes una misión especial: golpea el bloque 10 veces para descubrir tu sorpresa 🎁</p>
+            <p>Golpes: <span id="contador">0</span>/10</p>
+        </div>
+
+        <div class="block-wrapper">
+            <div id="block" class="question-block">?</div>
+        </div>
+
+        <div id="item" class="hidden">🍄</div>
+
+        <div id="reward" class="hidden">
+            <div class="ticket">
+                <div class="ticket-header">Invitación para ver:</div>
+                <div class="ticket-body">
+                    <h2 class="pixel-text">SUPER MARIO BROS</h2>
+                    <p>Válido para: <strong>La doc más increíble</strong></p>
+                    <p>Lugar: Cinemark Llanogrande</p>
+                    <p style="margin-top:10px;">Me encantaría compartir este momento contigo 💛</p>
+                </div>
+                <div class="ticket-footer">¿Aceptas ser la jugadora 2?</div>
+            </div>
+            <button id="btn-confirm">Aceptar misión 🎮🍿</button>
+        </div>
+
+    </div>
+
+    <!-- 🔊 SONIDOS -->
+    <audio id="coin-sound" src="https://www.myinstants.com/media/sounds/mario-coin.mp3"></audio>
+    <audio id="bg-music" src="cancion.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
